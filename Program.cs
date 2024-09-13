@@ -1,14 +1,15 @@
 using FociWebapp;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<FociDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString(""));
-});
+builder.Services.AddDbContext<FociDbContext>(
+    options => options.UseSqlite("Data Source=foci.db"));
+
+);
 
 var app = builder.Build();
 

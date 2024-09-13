@@ -1,4 +1,6 @@
-﻿namespace FociWebapp
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace FociWebapp
 {
     public class FociDbContext : DbContext
     {
